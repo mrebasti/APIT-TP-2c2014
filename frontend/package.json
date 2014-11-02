@@ -11,5 +11,8 @@
     "url": "https://github.com/bordanzig/APIT-TP-2c2014.git/frontend"
   },
   "author": "APIT - 2014 2c - Grupo 6",
-  "license": "BSD"
+  "license": "BSD",
+  "dependencies": {
+    "express": "~4.10.1"
+  }
 }
