@@ -1,0 +1,15 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Aplicación web para el trabajo de investigación de APIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bordanzig/APIT-TP-2c2014.git/frontend"
+  },
+  "author": "APIT - 2014 2c - Grupo 6",
+  "license": "BSD"
+}
