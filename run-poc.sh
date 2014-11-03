@@ -1,4 +1,5 @@
 #!/bin/bash
 
 git pull
-nodejs ./frontend/index.js
+cd frontend
+nodejs index.js
