@@ -18,9 +18,11 @@ RUN mkdir -p /var/poc
 
 WORKDIR /var/poc
 RUN git clone https://github.com/bordanzig/APIT-TP-2c2014.git
-WORKDIR /var/poc/APIT-TP-2c2014
 
+WORKDIR /var/poc/APIT-TP-2c2014/frontend
 RUN npm install
+
+WORKDIR /var/poc/APIT-TP-2c2014
 
 EXPOSE 27017
 EXPOSE 3000
