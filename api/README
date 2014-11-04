@@ -1,0 +1,38 @@
+Pasos para levantar el server.
+
+Requisitos previos:
+MongoDB
+Express
+Nodejs
+
+
+Ejecutar lo sigueinte para correr el server
+
+sudo npm install
+node server.js
+
+
+Para hacer HTTP requests:
+
+PORT: 8080
+
+-POST: /api/user
+-GET: /api/user
+
+-----º-----
+Ejemplo de POST:
+
+curl -H "Content-Type: application/json" -d '{"name": "gonzalo", "lastname":"bordanzi", "email":"bordanzi.gonzalo92@gmail.com", "sinceDate": "2014-10-05"}' http://localhost:8080/api/user
+
+-----º-----
+Ejemplo de GET:
+
+curl 'http://localhost:8080/api/user'
+
+
+Datos de mongo:
+Host: localhost
+Port: default
+db: apitdb
+collection: users
+
