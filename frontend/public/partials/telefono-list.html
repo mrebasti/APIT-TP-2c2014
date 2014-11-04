@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="filterCriteria" ng-change="filterResult()">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select>
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="phones">
+        <li ng-repeat="telefono in telefonos | filter:filterCriteria | orderBy:orderProp"
+            class="thumbnail phone-listing">
+          <a>{{telefono.name}}</a>
+          <p>{{telefono.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

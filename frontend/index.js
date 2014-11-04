@@ -6,6 +6,10 @@ app.get('/rest', function (req, res) {
 });
 
 app.use(express.static(__dirname + '/public'));
+app.use('/bootstrap', express.static( __dirname + '/node_modules/bootstrap'));
+app.use('/angular', express.static( __dirname + '/node_modules/angular'));
+app.use('/angular-route', express.static( __dirname + '/node_modules/angular-route'));
+app.use('/angular-resource', express.static( __dirname + '/node_modules/angular-resource'));
 
 var server = app.listen(3000, function () {
 
