@@ -13,6 +13,10 @@
   "author": "APIT - 2014 2c - Grupo 6",
   "license": "BSD",
   "dependencies": {
-    "express": "~4.10.1"
+    "express": "~4.10.1",
+    "angular": "~1.3.1",
+    "bootstrap": "~3.3.0",
+    "angular-route": "~1.3.1",
+    "angular-resource": "~1.3.1"
   }
 }
