@@ -6,6 +6,7 @@ var app = express(); 				// define our app using express
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var User = require('./models/userModel');
+var Phone = require('./models/phoneModel');
 
 //Connect to MongoDB
 mongoose.connect('mongodb://localhost/apitdb');
@@ -35,6 +36,38 @@ router.get('/', function(req, res) {
 });
 
 // API ROUTES:
+
+router.route('/phone')
+  
+  .post(function(req, res){
+    var phone = new Phone();
+    phone.brand = req.body.brand;
+    phone.model = req.body.model;
+    phone.price = req.body.price;
+    phone.d.wifi = req.body.d.wifi;
+    phone.d.bluetooth = req.body.d.bluetooth;
+    phone.d.ram = req.body.d.ram;
+    phone.d.camera.definition = req.body.d.camera.definition;
+    phone.d.camera.flash = req.body.d.camera.flash;
+    phone.d.gps = req.body.d.gps;
+    phone.d.so = req.body.d.so;
+
+    //Save user
+    user.save(function(err){
+      if (err)
+        res.send(err);
+    res.json({message: 'Phone Created'});
+    });
+  })
+
+  .get(function(req, res){
+    Phone.find(function(err, phones){
+      if (err)
+        res.send(err);
+
+      res.json(phones);
+    });
+  });
 
 router.route('/user')
 	
