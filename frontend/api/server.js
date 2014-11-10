@@ -5,7 +5,6 @@ var express = require('express'); 		// call express
 var app = express(); 				// define our app using express
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var User = require('./models/userModel');
 var Phone = require('./models/phoneModel');
 
 //Connect to MongoDB
@@ -61,6 +60,7 @@ router.route('/phone')
   })
 
   .get(function(req, res){
+
     Phone.find(function(err, phones){
       if (err)
         res.send(err);
@@ -68,35 +68,6 @@ router.route('/phone')
       res.json(phones);
     });
   });
-
-router.route('/user')
-	
-  //POST for adding users to mongoDB collection
-  .post(function(req, res){
-    var user = new User();
-    user.name = req.body.name;
-    user.lastname = req.body.lastname;
-    user.email = req.body.email;
-    user.since = req.body.sinceDate;
-
-    //Save user
-    user.save(function(err){
-      if (err)
-        res.send(err);
-    res.json({message: 'User Created'});
-    });
-  })
-
-  //GET all users
-  .get(function(req, res){
-  	User.find(function(err, users){
-  	  if (err)
-  	  	res.send(err);
-
-  	  res.json(users);
-  	});
-  });
-
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
