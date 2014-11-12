@@ -50,6 +50,8 @@ router.route('/phone')
     phone.d.camera.flash = req.body.d.camera.flash;
     phone.d.gps = req.body.d.gps;
     phone.d.so = req.body.d.so;
+    splited = req.body.keywords.split(" ");
+    phone.d.keywords = splited;
 
     //Save user
     user.save(function(err){
@@ -60,8 +62,8 @@ router.route('/phone')
   })
 
   .get(function(req, res){
-
-    Phone.find(function(err, phones){
+    splitted = req.parameters.keywords.split(" ");
+    Phone.find({"keywords":{"$all":splited}},function(err, phones){
       if (err)
         res.send(err);
 

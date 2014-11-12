@@ -17,7 +17,8 @@ var PhoneSchema = new Schema({
       flash: boolean,
     },
     gps: boolean,
-    so: String
+    so: String,
+    keywords: [String]
   }
 });
 
