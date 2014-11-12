@@ -3,6 +3,6 @@
 mongod --fork --logpath ./log.txt
 
 git pull
-cd frontend
+cd poc-app
 npm install
 nodejs index.js

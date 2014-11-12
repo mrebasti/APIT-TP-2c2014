@@ -5,7 +5,7 @@ app.get('/rest', function (req, res) {
   res.send('Hello World!')
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/frontend/static'));
 app.use('/bootstrap', express.static( __dirname + '/node_modules/bootstrap'));
 app.use('/angular', express.static( __dirname + '/node_modules/angular'));
 app.use('/angular-route', express.static( __dirname + '/node_modules/angular-route'));
