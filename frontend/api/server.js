@@ -53,8 +53,8 @@ router.route('/phone')
     splited = req.body.keywords.split(" ");
     phone.d.keywords = splited;
 
-    //Save user
-    user.save(function(err){
+    //Save phone
+    phone.save(function(err){
       if (err)
         res.send(err);
     res.json({message: 'Phone Created'});
