@@ -54,7 +54,7 @@ module.exports = function(app){
       phone.save(function(err){
         if (err)
           res.send(err);
-      res.json({message: 'Phone Created'});
+        res.json({message: 'Phone Created'});
       });
     })
 
