@@ -4,6 +4,7 @@ var app = express();
 require('./common-routes')(app);
 require('./frontend/index.js')(app);
 require('./contentmngr/index.js')(app);
+require('./api/server.js')(app);
 
 var server = app.listen(3000, function () {
 
