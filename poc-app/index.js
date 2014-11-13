@@ -1,15 +1,9 @@
 var express = require('express');
 var app = express();
 
-app.get('/rest', function (req, res) {
-  res.send('Hello World!')
-});
-
-app.use(express.static(__dirname + '/frontend/static'));
-app.use('/bootstrap', express.static( __dirname + '/node_modules/bootstrap'));
-app.use('/angular', express.static( __dirname + '/node_modules/angular'));
-app.use('/angular-route', express.static( __dirname + '/node_modules/angular-route'));
-app.use('/angular-resource', express.static( __dirname + '/node_modules/angular-resource'));
+require('./common-routes')(app);
+require('./frontend/index.js')(app);
+require('./contentmngr/index.js')(app);
 
 var server = app.listen(3000, function () {
 
