@@ -59,8 +59,13 @@ module.exports = function(app){
     })
 
     .get(function(req, res){
-      splitted = req.parameters.keywords.split(" ");
-      Phone.find({"keywords":{"$all":splited}},function(err, phones){
+      var filter = {};
+      var keywords = req.param('keywords');
+      if (keywords) {
+        var splitted = keywords.split(" ");
+        filter = {"keywords":{"$all":splitted}};
+      }
+      Phone.find(filter,function(err, phones){
         if (err)
           res.send(err);
 
